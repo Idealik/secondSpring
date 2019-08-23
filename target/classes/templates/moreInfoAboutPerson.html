@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>Full information about user</p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Email</th>
+    </tr>
+    <tr>
+        <td th:text="${person.id}"></td>
+        <td th:text="${person.name}"></td>
+        <td th:text="${person.surname}"></td>
+        <td th:text="${person.age}"></td>
+        <td th:text="${person.email}"></td>
+    </tr>
+</table>
+<p>Position</p>
+<table>
+    <tr>
+        <th>Position</th>
+        <th>Salary</th>
+    </tr>
+    <tr>
+        <td th:text="${position.name}"></td>
+        <td th:text="${position.salary}"></td>
+    </tr>
+</table>
+<p>Department</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+    </tr>
+    <tr>
+        <td th:text="${department.name}"></td>
+        <td th:text="${department.email}"></td>
+        <td th:text="${department.phoneNumber}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

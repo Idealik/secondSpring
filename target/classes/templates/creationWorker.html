@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form role="form" action="/addWorker" method="POST" enctype="multipart/form-data" name="person">
+        <td>
+            <input type="text" name="name" placeholder="Имя рабочего"/>
+            <input type="text" name="surname" placeholder="Фамилия рабочего"/>
+            <input type="text" name="age" placeholder="Возраст рабочего"/>
+            <input type="text" name="email" placeholder="Email рабочего"/>
+            <input type='hidden' name="department" th:value="${id}" />
+            <select name = "position" required>
+                <option th:each="position : ${positions}" th:text="${position.name}"
+                        th:value="${position.id}"/>
+            </select>
+            <button type="submit">Добавить Рабочего</button>
+        </td>
+</form>
+
+</body>
+</html>

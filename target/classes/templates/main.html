@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Departments</p>
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+        <tr th:each="department : ${departments}">
+            <td th:text="${department.id}"></td>
+            <td th:text="${department.name}"></td>
+            <td th:text="${department.phoneNumber}"></td>
+            <td th:text="${department.email}"></td>
+            <td><a th:href="@{'/departmentWorkers/' + ${department.id}}">Перейти к отделу</a></td>
+        </tr>
+    </table>
+</div>
+
+<p><a href="/creationDepartment">Добавить отдел</a></p>
+<p><a href="/creationPosition">Добавить должность</a></p>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <p>Название отдела</p>
+ <p th:text="${name}"/>
+ <table>
+     <tr>
+         <th>Id</th>
+         <th>Name</th>
+     </tr>
+     <tr th:each="person : ${persons}">
+         <td th:text="${person.id}"></td>
+         <td th:text="${person.name}"></td>
+         <td><a th:href="@{'/moreInfoAboutPerson/' + ${person.id}}">Больше информации</a></td>
+         <td>
+             <form action="/deletePerson" method="POST">
+                 <input type='hidden' name="id" th:value="${person.id}" />
+                 <button type="submit">Удалить</button>
+             </form>
+         </td>
+
+     </tr>
+ </table>
+
+ <a th:href="@{'/creationWorker/' + ${id}}">Добавить рабочего</a>
+
+
+</body>
+</html>

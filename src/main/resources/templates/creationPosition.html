@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form role="form" action="/addPosition" method="POST" enctype="multipart/form-data" name="position">
+    <td>
+        <input type="text" name="name" placeholder="Имя должности"/>
+        <input type="text" name="salary" placeholder="Размер оклада"/>
+        <button type="submit">Добавить должность</button>
+    </td>
+</form>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+    </tr>
+    <tr th:each="position : ${positions}">
+        <td th:text="${position.id}"></td>
+        <td th:text="${position.name}"></td>
+        <td th:text="${position.salary}"></td>
+    </tr>
+</table>
+</body>
+</html>
